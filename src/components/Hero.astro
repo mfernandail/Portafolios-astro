@@ -1,0 +1,61 @@
+---
+import { basics } from "@cv";
+---
+
+<section>
+  <div class="container">
+    <div class="info">
+      <h1>👋🏼 Hi, I'm {basics.name}</h1>
+      <h2>{basics.label}</h2>
+      <span>📍 {basics.location.city}, {basics.location.region}</span>
+      <footer>
+        <a
+          href={`mailto:${basics.email}`}
+          title={`Enviar un correo electrónico a ${basics.name} al correo ${basics.email}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          mail
+        </a>
+        <a
+          href={`tel:${basics.phone}`}
+          title={`Llamar por teléfono a ${basics.name} al número ${basics.phone}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          numero
+        </a>
+
+        {
+           basics.profiles.map(({ network, url, username }) => {
+            //const Icon = SOCIAL_ICONS[network]
+            return (
+              <a
+                href={url}
+                title={`Visitar el perfil de ${basics.name} en ${network}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {network}
+              </a>
+            )
+          })
+        }
+
+    </div>
+
+    <figure>
+      <img src={basics.image} alt={`Foto de ${basics.name}`} />
+    </figure>
+
+  </div>
+</section>
+
+<style>
+  section > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+</style>
