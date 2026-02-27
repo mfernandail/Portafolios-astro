@@ -2,7 +2,7 @@
   "basics": {
     "name": "Maria Fernanda",
     "label": "Programmer",
-    "image": "https://cdn-icons-png.flaticon.com/512/219/219969.png",
+    "image": "/me.webp",
     "email": "maria.ibanez.leiva@gmail.com",
     "phone": "(+56) 9 83746081",
     "url": "https://johndoe.com",
@@ -21,7 +21,7 @@
         "url": "https://github.com/mfernandail"
       },
       {
-        "network": "Linkedin",
+        "network": "LinkedIn",
         "username": "mariafernanda",
         "url": "https://github.com/mfernandail"
       }
