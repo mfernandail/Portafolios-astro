@@ -1,39 +1,41 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import Layout from '@/layouts/Layout.astro'
 
-import About from "@/components/sections/About.astro";
-import Education from "@/components/sections/Education.astro";
-import Experience from "@/components/sections/Experience.astro";
-import Hero from "@/components/sections/Hero.astro";
-import MiniGame from "@/components/sections/MiniGame.astro";
-import Projects from "@/components/sections/Projects.astro";
-import Skills from "@/components/sections/Skills.astro";
-import Keyboard from "@/components/Keyboard.astro";
+import About from '@/components/sections/About.astro'
+import Education from '@/components/sections/Education.astro'
+import Experience from '@/components/sections/Experience.astro'
+import Hero from '@/components/sections/Hero.astro'
+import MiniGame from '@/components/sections/MiniGame.astro'
+import Projects from '@/components/sections/Projects.astro'
+import Skills from '@/components/sections/Skills.astro'
+import Keyboard from '@/components/Keyboard.astro'
+
+import { basics } from '@cv'
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-    <Layout title="Maria Fernanda's Portfolio">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{`${basics.name} // ${basics.label}`}</title>
+  </head>
+  <body>
+    <Layout title={`Portafolio de ${basics.name} - ${basics.label}`}>
       <main>
         <Hero />
-        <About />
+        <Projects />
+        <Skills />
         <Experience />
         <Education />
-        <Skills />
-        <Projects />
+        <About />
         <MiniGame />
       </main>
       <Keyboard />
     </Layout>
-	</body>
+  </body>
 </html>
 
 <style>

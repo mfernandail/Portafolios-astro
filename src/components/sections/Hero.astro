@@ -4,8 +4,8 @@ import Section from '@/components/Section.astro'
 
 import Mail from '@/icons/Email.astro'
 import Number from '@/icons/Number.astro'
-import LinkedIn from '@/icons/Linkedin.astro'
 import Github from '@/icons/Github.astro'
+import Linkedin from '@/icons/Linkedin.astro'
 ---
 
 <Section>
@@ -13,7 +13,7 @@ import Github from '@/icons/Github.astro'
     <div class="info">
       <h1>{basics.name}</h1>
       <h2>{basics.label}</h2>
-      <span>📍 {basics.location.city}, {basics.location.region}</span>
+
       <footer>
         <a
           href={`mailto:${basics.email}`}
@@ -34,7 +34,6 @@ import Github from '@/icons/Github.astro'
 
         {
           basics.profiles.map(({ network, url, username }) => {
-            //const Icon = SOCIAL_ICONS[network]
             return (
               <a
                 href={url}
@@ -42,7 +41,7 @@ import Github from '@/icons/Github.astro'
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {network === 'LinkedIn' && <LinkedIn />}
+                {network === 'LinkedIn' && <Linkedin />}
                 {network === 'GitHub' && <Github />}
               </a>
             )
@@ -71,10 +70,35 @@ import Github from '@/icons/Github.astro'
   }
 
   h2 {
-    color: #4444;
     font-size: 1.1rem;
     font-weight: 500;
     text-wrap: balance;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .info span {
+    color: #666;
+    font-size: 0.8rem;
+  }
+
+  footer {
+    display: flex;
+    gap: 12px;
+    margin-top: 3px;
+  }
+
+  footer a {
+    color: #444;
+    transition: color 0.2s ease;
+  }
+
+  footer a:hover {
+    color: #000;
   }
 
   img {
