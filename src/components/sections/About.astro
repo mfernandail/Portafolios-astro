@@ -3,15 +3,22 @@ import Section from '@/components/Section.astro'
 import { basics } from '@cv'
 ---
 
-<Section>
-  <h1>About Me</h1>
+<Section title="About me">
   <p>{basics.summary}</p>
+
+  <hr />
 </Section>
 
 <style>
   p {
     margin-top: 10px;
-    color: #333;
+    color: #000;
     line-height: 1.5;
+  }
+
+  hr {
+    margin-top: 20px;
+    border: none;
+    border-top: 1px dotted #d0d0d0a3;
   }
 </style>

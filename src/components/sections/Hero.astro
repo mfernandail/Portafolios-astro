@@ -81,11 +81,6 @@ import Linkedin from '@/icons/Linkedin.astro'
     gap: 0.5rem;
   }
 
-  .info span {
-    color: #666;
-    font-size: 0.8rem;
-  }
-
   footer {
     display: flex;
     gap: 12px;
@@ -93,12 +88,16 @@ import Linkedin from '@/icons/Linkedin.astro'
   }
 
   footer a {
-    color: #444;
-    transition: color 0.2s ease;
+    color: #000;
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+    transform: scale(1);
   }
 
   footer a:hover {
-    color: #000;
+    color: #555;
+    transform: scale(1.05);
   }
 
   img {
