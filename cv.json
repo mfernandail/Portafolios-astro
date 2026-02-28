@@ -29,12 +29,22 @@
   },
   "work": [
     {
+      "name": "Corteva Agriscience",
+      "position": "Data collection",
+      "startDate": "2024-01-01",
+      "endDate": "",
+      "summary": "I develop business applications using Power Apps and Dataverse to digitalize and optimize internal processes. I design interactive Power BI reports for data analysis and visualization, and implement automations with Power Automate to improve operational efficiency. I also perform data analysis to support data-driven decision-making.",
+      "highlights": ["Started the company"]
+    },
+    {
       "name": "Syngenta",
       "position": "Data analyst",
-      "startDate": "2013-01-01",
-      "endDate": "2014-01-01",
-      "summary": "Description…",
-      "highlights": ["Started the company"]
+      "startDate": "2018-01-01",
+      "endDate": "2024-01-01",
+      "summary": "Developed and optimized SQL queries and database structures, designing tables and relationships to support business requirements. Built a REST API in PHP to expose structured data and integrated it with Power BI reports to enable data visualization and analysis.",
+      "highlights": [
+        "Reduced manual reporting processes by centralizing data access through a REST API consumed by Power BI dashboards."
+      ]
     }
   ],
   "volunteer": [
