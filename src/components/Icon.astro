@@ -1,0 +1,50 @@
+---
+import JavaScript from '@/icons/JavaScript.astro'
+import TypeScript from '@/icons/TypeScript.astro'
+import React from '@/icons/React.astro'
+import Node from '@/icons/Node.astro'
+import Express from '@/icons/Express.astro'
+import Html from '@/icons/Html.astro'
+import Css from '@/icons/Css.astro'
+import MySQL from '@/icons/MySQL.astro'
+import Git from '@/icons/Git.astro'
+import Github from '@/icons/Github.astro'
+import Jest from '@/icons/Jest.astro'
+import Email from '@/icons/Email.astro'
+import Number from '@/icons/Number.astro'
+import Linkedin from '@/icons/Linkedin.astro'
+
+const ICONS = [
+  { keywords: ['javascript'], Component: JavaScript },
+  { keywords: ['typescript'], Component: TypeScript },
+  { keywords: ['react'], Component: React },
+  { keywords: ['node'], Component: Node },
+  { keywords: ['express'], Component: Express },
+  { keywords: ['html'], Component: Html },
+  { keywords: ['css'], Component: Css },
+  { keywords: ['mysql'], Component: MySQL },
+  { keywords: ['github'], Component: Github },
+  { keywords: ['git'], Component: Git },
+  { keywords: ['test', 'jest'], Component: Jest },
+  { keywords: ['email', 'mail'], Component: Email },
+  { keywords: ['phone', 'number'], Component: Number },
+  { keywords: ['linkedin'], Component: Linkedin },
+]
+
+const { name = '' } = Astro.props
+const normalized = name.toLowerCase()
+const exactMatch = ICONS.find(({ keywords }) =>
+  keywords.some((keyword) => normalized === keyword.trim().toLowerCase()),
+)
+
+const entry =
+  exactMatch ??
+  ICONS.find(({ keywords }) =>
+    keywords.some((keyword) =>
+      normalized.includes(keyword.trim().toLowerCase()),
+    ),
+  )
+const IconComponent = entry?.Component
+---
+
+{IconComponent && <IconComponent />}

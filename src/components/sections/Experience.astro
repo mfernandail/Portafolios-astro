@@ -3,8 +3,7 @@ import { work } from '@cv'
 import Section from '@/components/Section.astro'
 ---
 
-<Section>
-  <h1>Experience</h1>
+<Section title="Experience">
   <ul>
     {
       work.map(({ name, position, startDate, endDate, summary }) => {
@@ -15,8 +14,8 @@ import Section from '@/components/Section.astro'
             <article>
               <header>
                 <div>
-                  <h2>{name}</h2>
-                  <h3>{position}</h3>
+                  <h3>{name}</h3>
+                  <h4>{position}</h4>
                 </div>
                 <time>
                   {startYear} - {endYear}
@@ -32,6 +31,7 @@ import Section from '@/components/Section.astro'
       })
     }
   </ul>
+   <hr />
 </Section>
 
 <style>
@@ -40,7 +40,7 @@ import Section from '@/components/Section.astro'
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    color: #333;
+    color: #000;
   }
 
   article h3 {
@@ -49,18 +49,25 @@ import Section from '@/components/Section.astro'
   }
 
   article time {
-    color: #666;
+    color: #333;
     font-size: 0.8rem;
   }
 
   article footer p {
     margin-top: 0.5rem;
-    line-height: 1.3;
+    line-height: 1.5;
+    color: #555;
   }
 
   header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+  }
+
+  hr {
+    margin-top: 20px;
+    border: none;
+    border-top: 1px dotted #d0d0d0a3;
   }
 </style>

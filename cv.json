@@ -22,8 +22,8 @@
       },
       {
         "network": "LinkedIn",
-        "username": "mariafernanda",
-        "url": "https://github.com/mfernandail"
+        "username": "mfernandail",
+        "url": "https://www.linkedin.com/in/mfernandail"
       }
     ]
   },
@@ -105,11 +105,33 @@
   "projects": [
     {
       "name": "Project",
+      "repository": "https://github.com/mfernandail/project",
       "startDate": "2019-01-01",
       "endDate": "2021-01-01",
-      "description": "Description...",
+      "description": "This is a sample project description. You can add details about the project, your role, and the technologies used.",
       "highlights": ["Won award at AIHacks 2016"],
-      "url": "https://project.com/"
+      "url": "https://project.com/",
+      "keywords": ["JavaScript", "React"]
+    },
+    {
+      "name": "Lauch App",
+      "repository": "https://github.com/mfernandail/lauch-app",
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "description": "This is a sample project description. You can add details about the project, your role, and the technologies used. ",
+      "highlights": ["Won award at AIHacks 2016"],
+      "url": "https://project.com/",
+      "keywords": ["Node", "Express"]
+    },
+    {
+      "name": "Shows App",
+      "repository": "https://github.com/mfernandail/lauch-app",
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "description": "This is a sample project description. You can add details about the project, your role, and the technologies used.",
+      "highlights": ["Won award at AIHacks 2016"],
+      "url": "https://project.com/",
+      "keywords": ["TypeScript", "React Native"]
     }
   ]
 }

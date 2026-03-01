@@ -1,5 +1,29 @@
 <footer></footer>
+<ninja-keys class="command-palette"> </ninja-keys>
+<script>
+  import 'ninja-keys'
 
-<script></script>
+  const ninja = document.querySelector('ninja-keys')
+  if (ninja !== null) {
+    ninja.data = [
+      {
+        id: 'Projects',
+        title: 'Open Projects',
+        hotkey: 'ctrl+N',
+        icon: 'apps',
+        section: 'Projects',
+        handler: () => {
+          // it's auto register above hotkey with this handler
+          alert('Your logic to handle')
+        },
+      },
+    ]
+  }
+</script>
 
-<style></style>
+<style>
+  .command-palette {
+    position: relative;
+    z-index: 999;
+  }
+</style>

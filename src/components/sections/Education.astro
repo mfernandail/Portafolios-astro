@@ -12,7 +12,11 @@ import { education } from '@cv'
             <h3>{education.institution}</h3>
             <h4>{education.area}</h4>
           </div>
-          <time> {new Date(education.startDate).getFullYear()} - {new Date(education.endDate).getFullYear()} </time>
+          <time>
+            {new Date(education.startDate).getFullYear()} - {
+              new Date(education.endDate).getFullYear()
+            }
+          </time>
         </header>
       </article>
     </li>
@@ -36,9 +40,14 @@ import { education } from '@cv'
     align-items: flex-start;
   }
 
-  article h3 {
-    font-weight: 500
-    color: #111;
+  h3 {
+    font-weight: 500;
+    color: #555;
+  }
+
+  h4 {
+    font-weight: 500;
+    color: #555;
   }
 
   article time {

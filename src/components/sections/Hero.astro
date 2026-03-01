@@ -2,61 +2,82 @@
 import { basics } from '@cv'
 import Section from '@/components/Section.astro'
 
-import Mail from '@/icons/Email.astro'
-import Number from '@/icons/Number.astro'
-import Github from '@/icons/Github.astro'
-import Linkedin from '@/icons/Linkedin.astro'
+import Icon from '../Icon.astro'
 ---
 
-<Section>
-  <div class="container">
-    <div class="info">
-      <h1>{basics.name}</h1>
-      <h2>{basics.label}</h2>
+<div class="hero">
+  <Section>
+    <div class="container">
+      <div class="info">
+        <h1>{basics.name}</h1>
+        <h2>{basics.label}</h2>
 
-      <footer>
-        <a
-          href={`mailto:${basics.email}`}
-          title={`Enviar un correo electrónico a ${basics.name} al correo ${basics.email}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Mail />
-        </a>
-        <a
-          href={`tel:${basics.phone}`}
-          title={`Llamar por teléfono a ${basics.name} al número ${basics.phone}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Number />
-        </a>
+        <footer>
+          <a
+            href={`mailto:${basics.email}`}
+            title={`Enviar un correo electrónico a ${basics.name} al correo ${basics.email}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="Email" aria-hidden="true" />
+            <span class="label">{basics.email}</span>
+          </a>
+          <a
+            href={`tel:${basics.phone}`}
+            title={`Llamar por teléfono a ${basics.name} al número ${basics.phone}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name="Number" aria-hidden="true" />
+            <span class="label">{basics.phone}</span>
+          </a>
 
-        {
-          basics.profiles.map(({ network, url, username }) => {
-            return (
-              <a
-                href={url}
-                title={`Visitar el perfil de ${basics.name} en ${network}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {network === 'LinkedIn' && <Linkedin />}
-                {network === 'GitHub' && <Github />}
-              </a>
-            )
-          })
-        }
-      </footer>
+          {
+            basics.profiles.map(({ network, url, username }) => {
+              return (
+                <a
+                  href={url}
+                  title={`Visitar el perfil de ${basics.name} en ${network}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {network === 'LinkedIn' && (
+                    <>
+                      <Icon name="LinkedIn" aria-hidden="true" />
+                      <span class="label">{url}</span>
+                    </>
+                  )}
+                  {network === 'GitHub' && (
+                    <>
+                      <Icon name="github" aria-hidden="true" />
+                      <span class="label">{url}</span>
+                    </>
+                  )}
+                </a>
+              )
+            })
+          }
+        </footer>
+      </div>
+
+      <figure>
+        <img src={basics.image} alt={`Foto de ${basics.name}`} />
+      </figure>
     </div>
-
-    <figure>
-      <img src={basics.image} alt={`Foto de ${basics.name}`} />
-    </figure>
-  </div>
-</Section>
+  </Section>
+</div>
 
 <style>
+  .hero {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eae5e5;
+    margin-bottom: 10px;
+  }
+
   .container {
     align-items: center;
     display: flex;
@@ -88,16 +109,34 @@ import Linkedin from '@/icons/Linkedin.astro'
   }
 
   footer a {
+    align-items: center;
     color: #000;
+    display: inline-flex;
+    gap: 6px;
     transition:
       color 0.2s ease,
       transform 0.2s ease;
-    transform: scale(1);
   }
 
   footer a:hover {
     color: #555;
-    transform: scale(1.05);
+  }
+
+  .label {
+    font-size: 0.7rem;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+      max-width 0.2s ease,
+      opacity 0.2s ease;
+    white-space: nowrap;
+  }
+
+  footer a:hover .label,
+  footer a:focus-visible .label {
+    max-width: 250px;
+    opacity: 1;
   }
 
   img {

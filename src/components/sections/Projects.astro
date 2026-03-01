@@ -1,7 +1,111 @@
 ---
-import Section from "../Section.astro";
+import Section from '../Section.astro'
+
+import { projects } from '@cv'
+import Github from '@/icons/Github.astro'
+import Icon from '@/components/Icon.astro'
 ---
 
-<Section>
-  <h1>Projects</h1>
+<Section title="Projects">
+  <ul>
+    {
+      projects.map((project) => {
+        return (
+          <li>
+            <article>
+              <header>
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  {project.name}
+                </a>
+                <a
+                  href={project.repository}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github aria-hidden="true" />
+                </a>
+              </header>
+              <main>
+                <p>{project.description}</p>
+              </main>
+              <footer>
+                {project.keywords.map((keyword) => {
+                  return <Icon name={keyword} />
+                })}
+              </footer>
+            </article>
+          </li>
+        )
+      })
+    }
+  </ul>
+
+  <hr />
 </Section>
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-inline: -16px;
+  }
+
+  article {
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    transition: box-shadow 0.2s ease;
+  }
+
+  article {
+    border-radius: 8px;
+    border: 1px solid #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    padding: 16px;
+  }
+
+  article header a {
+    color: #000;
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+    transform: scale(1);
+  }
+
+  article header a:hover {
+    color: #555;
+    transform: scale(1.05);
+  }
+
+  article header {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  article main p {
+    flex-grow: 1;
+    color: #555;
+    font-size: 0.8rem;
+  }
+
+  article footer {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  hr {
+    margin-top: 20px;
+    border: none;
+    border-top: 1px dotted #d0d0d0a3;
+  }
+</style>
