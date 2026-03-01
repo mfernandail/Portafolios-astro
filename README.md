@@ -1,43 +1,50 @@
-# Astro Starter Kit: Minimal
+# Maria Fernanda — Portfolio
 
-```sh
-pnpm create astro@latest -- --template minimal
+Minimal Astro site highlighting my work as a programmer focused on intentional, test-driven software and data solutions.
+
+## Snapshot
+
+- **Role:** Programmer & data-focused developer
+- **Location:** Arica, Chile (remote-friendly)
+- **Email:** maria.ibanez.leiva@gmail.com
+- **LinkedIn:** [mfernandail](https://www.linkedin.com/in/mfernandail)
+- **GitHub:** [mfernandail](https://github.com/mfernandail)
+
+## Sections Covered
+
+- Hero with hover-to-reveal contact info
+- About & summary powered by `cv.json`
+- Experience, Education, Projects, Skills, Mini Game, and Command Palette
+
+## Tech Focus
+
+`Astro` · `TypeScript` · `React` · `Node` · `Express` · `MySQL` · `Power Platform`
+
+## Interests
+
+- Reading fantasy and long-form fiction
+- Exploring practical AI integrations for real products
+- Casual Nintendo Switch gaming (New Super Mario Bros as a go-to reset)
+
+## Getting Started
+
+```bash
+pnpm install
+pnpm dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+| Script         | Purpose                                  |
+| -------------- | ---------------------------------------- |
+| `pnpm dev`     | Start the local dev server               |
+| `pnpm build`   | Generate the production bundle (`dist/`) |
+| `pnpm preview` | Preview the production build locally     |
 
-## 🚀 Project Structure
+## Data & Config
 
-Inside of your Astro project, you'll see the following folders and files:
+- All copy and profile links come from `cv.json`; updating it refreshes the UI automatically.
+- Skills and contact icons are resolved via `src/components/Icon.astro` for consistency.
+- Supabase integration notes for the Experience section live in `supabase.md` using `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY`.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Deploy
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Run `pnpm build` and publish the `dist/` folder to your preferred static host (Vercel, Netlify, Cloudflare Pages, etc.).
