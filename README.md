@@ -5,7 +5,7 @@ Minimal Astro site highlighting my work as a programmer focused on intentional, 
 ## Snapshot
 
 - **Role:** Programmer & data-focused developer
-- **Location:** Arica, Chile (remote-friendly)
+- **Location:** Chile (remote-friendly)
 - **Email:** maria.ibanez.leiva@gmail.com
 - **LinkedIn:** [mfernandail](https://www.linkedin.com/in/mfernandail)
 - **GitHub:** [mfernandail](https://github.com/mfernandail)
