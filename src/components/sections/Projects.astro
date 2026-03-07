@@ -1,9 +1,15 @@
 ---
 import Section from '../Section.astro'
 
-import { projects } from '@cv'
+// import { projects } from '@cv'
 import Github from '@/icons/Github.astro'
 import Icon from '@/components/Icon.astro'
+
+import { supabase } from '../../lib/supabase.ts'
+
+const { data: projects, error } = await supabase
+  .from('projects_view')
+  .select('*')
 ---
 
 <Section title="Projects">
