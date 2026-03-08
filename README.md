@@ -20,10 +20,6 @@ Minimal Astro site highlighting my work as a programmer focused on intentional, 
 
 `Astro` · `TypeScript` · `React` · `Node` · `Express` · `MySQL` · `Power Platform`
 
-## The project
-
-The project come form supabase, I want to learn how to use it and integrate it with astro, so I create a simple portfolio with the data stored in supabase, and then I create a simple API with express to fetch the data from supabase and serve it to the frontend.
-
 ## Interests
 
 - Reading fantasy and long-form fiction
